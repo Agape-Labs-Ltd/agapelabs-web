@@ -1,14 +1,22 @@
 import Header from '@/components/layout/Header';
 import Footer from '@/components/layout/Footer';
-import Hero from '@/components/home/Hero';
-import Features from '@/components/home/Features';
+import { AnimatedHero } from '@/components/home/AnimatedHero';
+import { EnhancedFeatures } from '@/components/home/EnhancedFeatures';
+import { BentoGrid } from '@/components/home/BentoGrid';
+import { InfiniteLogoScroll } from '@/components/home/InfiniteLogoScroll';
+import { TestimonialsCarousel } from '@/components/home/TestimonialsCarousel';
+import { CTASection } from '@/components/home/CTASection';
 
 export default function Home() {
   return (
-    <main>
+    <main className="bg-black">
       <Header />
-      <Hero />
-      <Features />
+      <AnimatedHero />
+      <InfiniteLogoScroll />
+      <EnhancedFeatures />
+      <BentoGrid />
+      <TestimonialsCarousel />
+      <CTASection />
       <Footer />
     </main>
   );
