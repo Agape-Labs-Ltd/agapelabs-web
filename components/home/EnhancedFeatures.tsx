@@ -55,7 +55,7 @@ const itemVariants = {
 
 export function EnhancedFeatures() {
   return (
-    <section className="py-16 md:py-24 bg-gradient-to-b from-gray-950 to-black relative overflow-hidden">
+    <section className="py-16 md:py-24 bg-white relative overflow-hidden">
       {/* Background decoration */}
       <div className="absolute inset-0 bg-[url('/grid.svg')] opacity-10" />
 
@@ -67,13 +67,13 @@ export function EnhancedFeatures() {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <h2 className="text-3xl md:text-5xl font-bold mb-4">
+          <h2 className="text-3xl md:text-5xl font-bold mb-4 text-black">
             Our Mission &{' '}
             <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
               Values
             </span>
           </h2>
-          <p className="text-xl text-gray-400 max-w-3xl mx-auto">
+          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
             At Agape Labs, we&apos;re committed to developing technology solutions that embody Christian love and service.
           </p>
         </motion.div>
@@ -90,7 +90,7 @@ export function EnhancedFeatures() {
             return (
               <motion.div key={index} variants={itemVariants}>
                 <TiltCard className="h-full">
-                  <div className="relative h-full bg-gradient-to-br from-gray-900 to-gray-800 p-8 rounded-xl border border-white/10 hover:border-white/20 transition-all duration-300 group">
+                  <div className="relative h-full bg-white p-8 rounded-xl border border-black/10 hover:border-black/20 transition-all duration-300 group shadow-lg hover:shadow-xl">
                     {/* Gradient glow effect */}
                     <div
                       className={`absolute -inset-0.5 bg-gradient-to-r ${feature.gradient} opacity-0 group-hover:opacity-100 blur transition-all duration-500 rounded-xl -z-10`}
@@ -109,10 +109,10 @@ export function EnhancedFeatures() {
                       </div>
                     </motion.div>
 
-                    <h3 className="text-xl font-semibold mb-3 text-white">
+                    <h3 className="text-xl font-semibold mb-3 text-black">
                       {feature.title}
                     </h3>
-                    <p className="text-gray-400 leading-relaxed">
+                    <p className="text-gray-600 leading-relaxed">
                       {feature.description}
                     </p>
 

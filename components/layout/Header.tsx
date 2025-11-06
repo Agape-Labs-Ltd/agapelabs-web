@@ -19,8 +19,8 @@ const Header = () => {
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         isScrolled
-          ? 'py-2 bg-black/80 backdrop-blur-xl border-b border-white/10 shadow-lg'
-          : 'py-4 bg-transparent border-b border-white/5'
+          ? 'py-2 bg-white/80 backdrop-blur-xl border-b border-black/10 shadow-lg'
+          : 'py-4 bg-transparent border-b border-black/5'
       }`}
     >
       <div className="container flex items-center justify-between">
@@ -44,23 +44,23 @@ const Header = () => {
 
         {/* Desktop Navigation */}
         <nav className="hidden md:flex items-center space-x-8">
-          <Link href="/" className="text-white hover:text-gray-300 font-medium transition">
+          <Link href="/" className="text-black hover:text-gray-600 font-medium transition">
             Home
           </Link>
-          <Link href="/about" className="text-white hover:text-gray-300 font-medium transition">
+          <Link href="/about" className="text-black hover:text-gray-600 font-medium transition">
             About
           </Link>
-          <Link href="/projects" className="text-white hover:text-gray-300 font-medium transition">
+          <Link href="/projects" className="text-black hover:text-gray-600 font-medium transition">
             Projects
           </Link>
-          <Link href="/contact" className="px-6 py-2.5 bg-white text-black rounded-lg font-medium hover:bg-gray-100 transition">
+          <Link href="/contact" className="px-6 py-2.5 bg-black text-white rounded-lg font-medium hover:bg-gray-800 transition">
             Contact Us
           </Link>
         </nav>
 
         {/* Mobile menu button */}
         <button
-          className="md:hidden focus:outline-none text-white"
+          className="md:hidden focus:outline-none text-black"
           onClick={toggleMenu}
           aria-label={menuOpen ? 'Close menu' : 'Open menu'}
         >
@@ -76,18 +76,18 @@ const Header = () => {
 
       {/* Mobile Navigation */}
       {menuOpen && (
-        <div className="md:hidden absolute top-full left-0 right-0 bg-black/95 backdrop-blur-xl z-50 shadow-lg animate-fade border-b border-white/10">
+        <div className="md:hidden absolute top-full left-0 right-0 bg-white/95 backdrop-blur-xl z-50 shadow-lg animate-fade border-b border-black/10">
           <div className="container py-4 flex flex-col space-y-4">
-            <Link href="/" className="text-white hover:text-gray-300 font-medium py-2 transition" onClick={toggleMenu}>
+            <Link href="/" className="text-black hover:text-gray-600 font-medium py-2 transition" onClick={toggleMenu}>
               Home
             </Link>
-            <Link href="/about" className="text-white hover:text-gray-300 font-medium py-2 transition" onClick={toggleMenu}>
+            <Link href="/about" className="text-black hover:text-gray-600 font-medium py-2 transition" onClick={toggleMenu}>
               About
             </Link>
-            <Link href="/projects" className="text-white hover:text-gray-300 font-medium py-2 transition" onClick={toggleMenu}>
+            <Link href="/projects" className="text-black hover:text-gray-600 font-medium py-2 transition" onClick={toggleMenu}>
               Projects
             </Link>
-            <Link href="/contact" className="px-6 py-2.5 bg-white text-black rounded-lg font-medium hover:bg-gray-100 transition w-full text-center" onClick={toggleMenu}>
+            <Link href="/contact" className="px-6 py-2.5 bg-black text-white rounded-lg font-medium hover:bg-gray-800 transition w-full text-center" onClick={toggleMenu}>
               Contact Us
             </Link>
           </div>

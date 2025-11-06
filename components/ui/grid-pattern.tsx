@@ -6,7 +6,7 @@ export function GridPattern() {
   return (
     <div className="absolute inset-0 overflow-hidden">
       <svg
-        className="absolute inset-0 h-full w-full stroke-white/5"
+        className="absolute inset-0 h-full w-full stroke-black/5"
         fill="none"
       >
         <defs>
@@ -38,8 +38,8 @@ export function GridPattern() {
         }}
       />
 
-      {/* Radial gradient from center */}
-      <div className="absolute inset-0 bg-gradient-radial from-transparent via-black/50 to-black" />
+      {/* Radial gradient from center - lighter for white background */}
+      <div className="absolute inset-0 bg-gradient-radial from-transparent via-white/30 to-white" />
     </div>
   );
 }

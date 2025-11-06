@@ -15,7 +15,7 @@ export function AnimatedHero() {
   const prefersReducedMotion = useReducedMotion();
 
   return (
-    <section className="relative min-h-screen flex items-center overflow-hidden bg-black">
+    <section className="relative min-h-screen flex items-center overflow-hidden bg-white">
       {/* Animated background elements */}
       {!prefersReducedMotion && (
         <>
@@ -37,13 +37,13 @@ export function AnimatedHero() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.1 }}
-            className="inline-flex items-center gap-2 px-4 py-2 mb-8 rounded-full bg-white/5 border border-white/10 backdrop-blur"
+            className="inline-flex items-center gap-2 px-4 py-2 mb-8 rounded-full bg-black/5 border border-black/10 backdrop-blur"
           >
             <span className="relative flex h-2 w-2">
               <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-blue-400 opacity-75"></span>
               <span className="relative inline-flex rounded-full h-2 w-2 bg-blue-500"></span>
             </span>
-            <span className="text-sm text-gray-300">Building the Future with Faith</span>
+            <span className="text-sm text-gray-700">Building the Future with Faith</span>
           </motion.div>
 
           {/* Main heading */}
@@ -51,7 +51,7 @@ export function AnimatedHero() {
             initial={{ opacity: 0, scale: 0.95 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="text-5xl md:text-7xl lg:text-8xl font-bold leading-tight mb-6"
+            className="text-5xl md:text-7xl lg:text-8xl font-bold leading-tight mb-6 text-black"
           >
             Spreading God&apos;s Love{' '}
             <br className="hidden md:block" />
@@ -94,7 +94,7 @@ export function AnimatedHero() {
               ]}
               wrapper="p"
               speed={50}
-              className="text-xl md:text-2xl text-gray-400 max-w-3xl mx-auto"
+              className="text-xl md:text-2xl text-gray-600 max-w-3xl mx-auto"
               repeat={Infinity}
             />
           </motion.div>
@@ -109,7 +109,7 @@ export function AnimatedHero() {
             <Link href="/projects">
               <MagneticButton className="group relative">
                 <span className="absolute -inset-1 bg-gradient-to-r from-blue-600 to-purple-600 blur-xl group-hover:blur-2xl transition-all opacity-50 group-hover:opacity-75" />
-                <span className="relative bg-black border border-white/20 px-8 py-4 rounded-lg flex items-center gap-2 font-medium hover:border-white/40 transition-colors">
+                <span className="relative bg-black text-white border border-black/20 px-8 py-4 rounded-lg flex items-center gap-2 font-medium hover:border-black/40 transition-colors">
                   Explore Our Work
                   <motion.span
                     animate={{ x: [0, 5, 0] }}
@@ -123,8 +123,8 @@ export function AnimatedHero() {
 
             <Link href="/contact">
               <MagneticButton className="group">
-                <span className="relative border border-white/20 bg-white/5 backdrop-blur px-8 py-4 rounded-lg hover:bg-white/10 hover:border-white/40 transition-all font-medium flex items-center gap-2 overflow-hidden">
-                  <span className="absolute inset-0 -translate-x-full group-hover:translate-x-full bg-gradient-to-r from-transparent via-white/20 to-transparent transition-transform duration-1000" />
+                <span className="relative border border-black/20 bg-black/5 backdrop-blur px-8 py-4 rounded-lg hover:bg-black/10 hover:border-black/40 transition-all font-medium flex items-center gap-2 overflow-hidden text-black">
+                  <span className="absolute inset-0 -translate-x-full group-hover:translate-x-full bg-gradient-to-r from-transparent via-black/20 to-transparent transition-transform duration-1000" />
                   Get in Touch
                 </span>
               </MagneticButton>

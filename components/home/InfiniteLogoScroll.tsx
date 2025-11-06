@@ -15,7 +15,7 @@ const technologies = [
 
 export function InfiniteLogoScroll() {
   return (
-    <section className="py-16 bg-black border-y border-white/10">
+    <section className="py-16 bg-gray-50 border-y border-black/10">
       <div className="container">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -24,15 +24,15 @@ export function InfiniteLogoScroll() {
           viewport={{ once: true }}
           className="text-center mb-12"
         >
-          <h3 className="text-2xl md:text-3xl font-bold text-gray-400 mb-2">
+          <h3 className="text-2xl md:text-3xl font-bold text-gray-600 mb-2">
             Powered by Modern Technology
           </h3>
         </motion.div>
 
         <div className="relative overflow-hidden">
           {/* Gradient overlays */}
-          <div className="absolute left-0 top-0 bottom-0 w-32 bg-gradient-to-r from-black to-transparent z-10" />
-          <div className="absolute right-0 top-0 bottom-0 w-32 bg-gradient-to-l from-black to-transparent z-10" />
+          <div className="absolute left-0 top-0 bottom-0 w-32 bg-gradient-to-r from-gray-50 to-transparent z-10" />
+          <div className="absolute right-0 top-0 bottom-0 w-32 bg-gradient-to-l from-gray-50 to-transparent z-10" />
 
           {/* Scrolling content */}
           <motion.div
@@ -55,7 +55,7 @@ export function InfiniteLogoScroll() {
                 <div className="text-5xl md:text-6xl grayscale group-hover:grayscale-0 transition-all duration-300 group-hover:scale-110">
                   {tech.logo}
                 </div>
-                <span className="text-sm text-gray-500 group-hover:text-gray-300 transition-colors">
+                <span className="text-sm text-gray-500 group-hover:text-gray-700 transition-colors">
                   {tech.name}
                 </span>
               </div>

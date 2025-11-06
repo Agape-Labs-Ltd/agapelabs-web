@@ -9,7 +9,7 @@ import { CTASection } from '@/components/home/CTASection';
 
 export default function Home() {
   return (
-    <main className="bg-black">
+    <main className="bg-white">
       <Header />
       <AnimatedHero />
       <InfiniteLogoScroll />
