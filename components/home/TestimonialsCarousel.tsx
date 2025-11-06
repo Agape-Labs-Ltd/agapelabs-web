@@ -40,7 +40,7 @@ export function TestimonialsCarousel() {
   };
 
   return (
-    <section className="py-16 md:py-24 bg-black relative overflow-hidden">
+    <section className="py-16 md:py-24 bg-white relative overflow-hidden">
       {/* Background decoration */}
       <div className="absolute inset-0 bg-gradient-to-b from-purple-900/10 to-transparent" />
 
@@ -52,13 +52,13 @@ export function TestimonialsCarousel() {
           viewport={{ once: true }}
           className="text-center mb-12"
         >
-          <h2 className="text-3xl md:text-5xl font-bold mb-4">
+          <h2 className="text-3xl md:text-5xl font-bold mb-4 text-black">
             What Our{' '}
             <span className="bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent">
               Clients Say
             </span>
           </h2>
-          <p className="text-xl text-gray-400 max-w-2xl mx-auto">
+          <p className="text-xl text-gray-600 max-w-2xl mx-auto">
             Don&apos;t just take our word for it - hear from those we&apos;ve served
           </p>
         </motion.div>
@@ -72,7 +72,7 @@ export function TestimonialsCarousel() {
                 animate={{ opacity: 1, x: 0 }}
                 exit={{ opacity: 0, x: -100 }}
                 transition={{ duration: 0.3 }}
-                className="bg-gradient-to-br from-gray-900 to-gray-800 p-8 md:p-12 rounded-2xl border border-white/10 relative"
+                className="bg-white p-8 md:p-12 rounded-2xl border border-black/10 relative shadow-xl"
               >
                 {/* Quote mark decoration */}
                 <div className="absolute top-8 left-8 text-6xl text-purple-500/20 font-serif">
@@ -87,7 +87,7 @@ export function TestimonialsCarousel() {
                 </div>
 
                 {/* Content */}
-                <p className="text-lg md:text-xl text-gray-300 mb-8 text-center relative z-10">
+                <p className="text-lg md:text-xl text-gray-700 mb-8 text-center relative z-10">
                   {testimonials[currentIndex].content}
                 </p>
 
@@ -95,10 +95,10 @@ export function TestimonialsCarousel() {
                 <div className="flex items-center justify-center gap-4">
                   <div className="text-4xl">{testimonials[currentIndex].avatar}</div>
                   <div>
-                    <div className="font-semibold text-white">
+                    <div className="font-semibold text-black">
                       {testimonials[currentIndex].name}
                     </div>
-                    <div className="text-sm text-gray-400">
+                    <div className="text-sm text-gray-600">
                       {testimonials[currentIndex].role}
                     </div>
                   </div>

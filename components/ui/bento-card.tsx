@@ -24,9 +24,9 @@ export function BentoCard({
   return (
     <TiltCard
       className={cn(
-        'group relative overflow-hidden rounded-2xl bg-gradient-to-br from-gray-900 to-gray-800 p-6 md:p-8',
-        'border border-white/10',
-        'hover:border-white/20 transition-all duration-300',
+        'group relative overflow-hidden rounded-2xl bg-white p-6 md:p-8',
+        'border border-black/10',
+        'hover:border-black/20 transition-all duration-300 shadow-lg hover:shadow-xl',
         className
       )}
     >
@@ -51,10 +51,10 @@ export function BentoCard({
           </motion.div>
         )}
 
-        <h3 className="text-xl md:text-2xl font-bold mb-2">{title}</h3>
+        <h3 className="text-xl md:text-2xl font-bold mb-2 text-black">{title}</h3>
 
         {description && (
-          <p className="text-gray-400 text-sm md:text-base mb-4">{description}</p>
+          <p className="text-gray-600 text-sm md:text-base mb-4">{description}</p>
         )}
 
         {children && <div className="mt-4">{children}</div>}

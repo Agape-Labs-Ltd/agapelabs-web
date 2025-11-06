@@ -8,7 +8,7 @@ import { IconArrowRight, IconSparkles } from '@tabler/icons-react';
 
 export function CTASection() {
   return (
-    <section className="py-24 md:py-32 bg-black relative overflow-hidden">
+    <section className="py-24 md:py-32 bg-gradient-to-b from-gray-50 to-white relative overflow-hidden">
       {/* Spotlight effect */}
       <Spotlight />
 
@@ -35,10 +35,10 @@ export function CTASection() {
             whileInView={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.6, delay: 0.2 }}
             viewport={{ once: true }}
-            className="inline-flex items-center gap-2 px-4 py-2 mb-8 rounded-full bg-gradient-to-r from-blue-600/20 to-purple-600/20 border border-white/10 backdrop-blur"
+            className="inline-flex items-center gap-2 px-4 py-2 mb-8 rounded-full bg-gradient-to-r from-blue-600/20 to-purple-600/20 border border-black/10 backdrop-blur"
           >
-            <IconSparkles className="w-4 h-4 text-purple-400" />
-            <span className="text-sm text-gray-300">Let&apos;s Build Something Amazing</span>
+            <IconSparkles className="w-4 h-4 text-purple-600" />
+            <span className="text-sm text-gray-700">Let&apos;s Build Something Amazing</span>
           </motion.div>
 
           {/* Heading */}
@@ -47,7 +47,7 @@ export function CTASection() {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.3 }}
             viewport={{ once: true }}
-            className="text-4xl md:text-6xl font-bold mb-6"
+            className="text-4xl md:text-6xl font-bold mb-6 text-black"
           >
             Ready to Transform{' '}
             <span className="bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 bg-clip-text text-transparent">
@@ -62,7 +62,7 @@ export function CTASection() {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
             viewport={{ once: true }}
-            className="text-xl text-gray-400 mb-12 max-w-2xl mx-auto"
+            className="text-xl text-gray-600 mb-12 max-w-2xl mx-auto"
           >
             Let&apos;s collaborate to create technology solutions that make a lasting impact.
             Get in touch today and discover how we can help bring your ideas to life.
@@ -82,7 +82,7 @@ export function CTASection() {
                 <div className="absolute -inset-1 bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 rounded-lg opacity-75 group-hover:opacity-100 blur group-hover:blur-xl transition-all duration-500 animate-gradient-x" />
 
                 {/* Button content */}
-                <span className="relative bg-black border border-white/20 px-8 py-4 rounded-lg flex items-center gap-2 font-medium">
+                <span className="relative bg-black text-white border border-black/20 px-8 py-4 rounded-lg flex items-center gap-2 font-medium">
                   Start Your Project
                   <motion.span
                     animate={{ x: [0, 5, 0] }}
@@ -96,7 +96,7 @@ export function CTASection() {
 
             <Link href="/about">
               <MagneticButton>
-                <span className="border border-white/20 bg-white/5 backdrop-blur px-8 py-4 rounded-lg hover:bg-white/10 hover:border-white/40 transition-all font-medium">
+                <span className="border border-black/20 bg-black/5 backdrop-blur px-8 py-4 rounded-lg hover:bg-black/10 hover:border-black/40 transition-all font-medium text-black">
                   Learn More About Us
                 </span>
               </MagneticButton>

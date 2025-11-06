@@ -35,7 +35,7 @@ const itemVariants = {
 
 export function BentoGrid() {
   return (
-    <section className="py-16 md:py-24 bg-black">
+    <section className="py-16 md:py-24 bg-gray-50">
       <div className="container">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -44,10 +44,10 @@ export function BentoGrid() {
           viewport={{ once: true }}
           className="text-center mb-12 md:mb-16"
         >
-          <h2 className="text-3xl md:text-5xl font-bold mb-4">
+          <h2 className="text-3xl md:text-5xl font-bold mb-4 text-black">
             Why Choose <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">Agape Labs</span>
           </h2>
-          <p className="text-gray-400 text-lg max-w-2xl mx-auto">
+          <p className="text-gray-600 text-lg max-w-2xl mx-auto">
             We combine cutting-edge technology with faith-driven values to deliver exceptional results
           </p>
         </motion.div>
