@@ -6,7 +6,6 @@ import { TypeAnimation } from 'react-type-animation';
 import { MagneticButton } from '@/components/ui/magnetic-button';
 import { GridPattern } from '@/components/ui/grid-pattern';
 import { Spotlight } from '@/components/ui/spotlight';
-import { AnimatedGradientText } from '@/components/ui/animated-gradient-text';
 import { StatCard } from '@/components/ui/animated-counter';
 import { IconRocket, IconBolt, IconHeart, IconWorld } from '@tabler/icons-react';
 import { useReducedMotion } from '@/hooks/useReducedMotion';
@@ -53,27 +52,12 @@ export function AnimatedHero() {
             transition={{ duration: 0.8, delay: 0.2 }}
             className="text-5xl md:text-7xl lg:text-8xl font-bold leading-tight mb-6 text-black"
           >
-            Spreading God&apos;s Love{' '}
+            Spreading{' '}
+            <span className="text-gradient-prismatic">
+              God&apos;s Love
+            </span>{' '}
             <br className="hidden md:block" />
-            <span className="relative inline-block mt-2">
-              <AnimatedGradientText className="text-5xl md:text-7xl lg:text-8xl font-bold">
-                Through Technology
-              </AnimatedGradientText>
-              {!prefersReducedMotion && (
-                <motion.span
-                  className="absolute -inset-4 bg-gradient-to-r from-blue-600 to-purple-600 blur-3xl opacity-30 -z-10"
-                  animate={{
-                    scale: [1, 1.2, 1],
-                    opacity: [0.3, 0.5, 0.3]
-                  }}
-                  transition={{
-                    duration: 3,
-                    repeat: Infinity,
-                    ease: "easeInOut"
-                  }}
-                />
-              )}
-            </span>
+            Through Technology
           </motion.h1>
 
           {/* Animated subtitle */}
@@ -108,7 +92,7 @@ export function AnimatedHero() {
           >
             <Link href="/projects">
               <MagneticButton className="group relative">
-                <span className="absolute -inset-1 bg-gradient-to-r from-blue-600 to-purple-600 blur-xl group-hover:blur-2xl transition-all opacity-50 group-hover:opacity-75" />
+                <span className="absolute -inset-1 bg-gradient-to-r from-violet-600 via-cyan-500 to-yellow-500 blur-xl group-hover:blur-2xl transition-all opacity-50 group-hover:opacity-75" />
                 <span className="relative bg-black text-white border border-black/20 px-8 py-4 rounded-lg flex items-center gap-2 font-medium hover:border-black/40 transition-colors">
                   Explore Our Work
                   <motion.span
@@ -173,8 +157,9 @@ export function AnimatedHero() {
       {/* Decorative gradient orbs */}
       {!prefersReducedMotion && (
         <>
-          <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-blue-500/20 rounded-full blur-3xl animate-pulse" />
-          <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-purple-500/20 rounded-full blur-3xl animate-pulse delay-1000" />
+          <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-violet-500/15 rounded-full blur-3xl animate-pulse" />
+          <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-cyan-500/15 rounded-full blur-3xl animate-pulse delay-1000" />
+          <div className="absolute top-1/2 right-1/3 w-72 h-72 bg-yellow-500/10 rounded-full blur-3xl animate-pulse delay-500" />
         </>
       )}
     </section>

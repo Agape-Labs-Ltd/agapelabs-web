@@ -54,7 +54,7 @@ export function TestimonialsCarousel() {
         >
           <h2 className="text-3xl md:text-5xl font-bold mb-4 text-black">
             What Our{' '}
-            <span className="bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent">
+            <span className="text-gradient-prismatic">
               Clients Say
             </span>
           </h2>

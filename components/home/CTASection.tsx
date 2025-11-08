@@ -13,7 +13,7 @@ export function CTASection() {
       <Spotlight />
 
       {/* Background gradient orbs */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-gradient-to-r from-blue-600/20 to-purple-600/20 rounded-full blur-3xl" />
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-gradient-to-r from-violet-600/20 via-cyan-500/20 to-yellow-500/20 rounded-full blur-3xl" />
 
       {/* Animated border */}
       <div className="absolute inset-0">
@@ -35,9 +35,9 @@ export function CTASection() {
             whileInView={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.6, delay: 0.2 }}
             viewport={{ once: true }}
-            className="inline-flex items-center gap-2 px-4 py-2 mb-8 rounded-full bg-gradient-to-r from-blue-600/20 to-purple-600/20 border border-black/10 backdrop-blur"
+            className="inline-flex items-center gap-2 px-4 py-2 mb-8 rounded-full bg-gradient-to-r from-violet-600/20 via-cyan-500/20 to-yellow-500/20 border border-black/10 backdrop-blur"
           >
-            <IconSparkles className="w-4 h-4 text-purple-600" />
+            <IconSparkles className="w-4 h-4 text-violet-600" />
             <span className="text-sm text-gray-700">Let&apos;s Build Something Amazing</span>
           </motion.div>
 
@@ -50,7 +50,7 @@ export function CTASection() {
             className="text-4xl md:text-6xl font-bold mb-6 text-black"
           >
             Ready to Transform{' '}
-            <span className="bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 bg-clip-text text-transparent">
+            <span className="text-gradient-prismatic">
               Your Vision
             </span>
             {' '}Into Reality?
@@ -79,7 +79,7 @@ export function CTASection() {
             <Link href="/contact">
               <MagneticButton className="group relative">
                 {/* Animated gradient border */}
-                <div className="absolute -inset-1 bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 rounded-lg opacity-75 group-hover:opacity-100 blur group-hover:blur-xl transition-all duration-500 animate-gradient-x" />
+                <div className="absolute -inset-1 bg-gradient-to-r from-violet-600 via-cyan-500 to-yellow-500 rounded-lg opacity-75 group-hover:opacity-100 blur group-hover:blur-xl transition-all duration-500 animate-gradient-x" />
 
                 {/* Button content */}
                 <span className="relative bg-black text-white border border-black/20 px-8 py-4 rounded-lg flex items-center gap-2 font-medium">

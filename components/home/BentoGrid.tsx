@@ -45,7 +45,7 @@ export function BentoGrid() {
           className="text-center mb-12 md:mb-16"
         >
           <h2 className="text-3xl md:text-5xl font-bold mb-4 text-black">
-            Why Choose <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">Agape Labs</span>
+            Why Choose <span className="text-gradient-prismatic">Agape Labs</span>
           </h2>
           <p className="text-gray-600 text-lg max-w-2xl mx-auto">
             We combine cutting-edge technology with faith-driven values to deliver exceptional results
