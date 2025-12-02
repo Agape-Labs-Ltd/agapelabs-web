@@ -150,6 +150,13 @@
     background-clip: text;
   }
 
+  .text-gradient-stripe {
+    background: linear-gradient(90deg, #0066FF 0%, #A259FF 25%, #FF4D8D 50%, #FFB84D 75%, #0066FF 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
   .glass {
     @apply bg-white/5 backdrop-blur-xl border border-white/10;
   }

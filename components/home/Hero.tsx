@@ -48,7 +48,7 @@ const Hero = () => {
           <div>
             <h1 
               ref={headingRef}
-              className="text-4xl md:text-6xl font-bold leading-tight mb-6 transform translate-y-8 opacity-0 transition-all duration-700"
+              className="text-8xl md:text-6xl font-bold leading-tight mb-6 transform translate-y-8 opacity-0 transition-all duration-700"
             >
               Spreading God's Love <span className="text-blue-600">Through Technology</span>
             </h1>

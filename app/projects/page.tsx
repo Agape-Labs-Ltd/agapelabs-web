@@ -18,7 +18,7 @@ export default function ProjectsPage() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             <ProjectCard
-              imgSrc="/images/rhema_logo.jpg"
+              imgSrc="/images/rhema_logo.png"
               title="Rhema"
               description="Memorize Scripture with Rhema's fun, Duolingo-style games. Short, adaptive microsessions build lasting memory, turning practice into a deep meditation on God's Word."
               link="https://rhema-app.com"

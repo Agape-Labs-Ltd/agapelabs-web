@@ -31,9 +31,9 @@ const Header = () => {
                 <p className="text-sm">Logo</p>
               </div>
             )}
-            <Image 
-              src={'/images/agape-labs-logo.png'}
-              alt="Agape Labs Logo" 
+            <Image
+              src={'/images/agape-labs-logo.png?v=2'}
+              alt="Agape Labs Logo"
               fill
               style={{ objectFit: 'contain', display: logoError ? 'none' : 'block' }}
               priority
