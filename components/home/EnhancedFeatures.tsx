@@ -45,11 +45,7 @@ const itemVariants = {
   hidden: { opacity: 0, y: 30 },
   visible: {
     opacity: 1,
-    y: 0,
-    transition: {
-      duration: 0.6,
-      ease: 'easeOut'
-    }
+    y: 0
   }
 };
 
@@ -88,7 +84,11 @@ export function EnhancedFeatures() {
           {features.map((feature, index) => {
             const Icon = feature.icon;
             return (
-              <motion.div key={index} variants={itemVariants}>
+              <motion.div 
+                key={index} 
+                variants={itemVariants}
+                transition={{ duration: 0.6 }}
+              >
                 <TiltCard className="h-full">
                   <div className="relative h-full bg-white p-8 rounded-2xl border border-black/10 hover:border-black/20 transition-all duration-300 group shadow-lg hover:shadow-xl">
                     {/* Gradient glow effect */}

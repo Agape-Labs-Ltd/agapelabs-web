@@ -50,13 +50,13 @@ const Hero = () => {
               ref={headingRef}
               className="text-4xl md:text-6xl font-bold leading-tight mb-6 transform translate-y-8 opacity-0 transition-all duration-700"
             >
-              Spreading God's Love <span className="text-blue-600">Through Tech</span>
+              Spreading God&apos;s Love <span className="text-blue-600">Through Tech</span>
             </h1>
             <p 
               ref={subheadingRef}
               className="text-xl text-gray-700 mb-8 max-w-lg transform translate-y-8 opacity-0 transition-all duration-700"
             >
-             We're on a mission to build the next generation of digital tools to help believers all around the world grow in their relationship with Christ.
+             We&apos;re on a mission to build the next generation of digital tools to help believers all around the world grow in their relationship with Christ.
             </p>
             <div 
               ref={ctaRef}

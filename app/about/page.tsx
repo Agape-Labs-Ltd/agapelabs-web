@@ -17,7 +17,7 @@ export default function About() {
           <div className="mb-12 text-center">
             <h1 className="text-4xl md:text-5xl font-bold mb-6">About Agape Labs</h1>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Spreading God's love through innovative technology solutions.
+              Spreading God&apos;s love through innovative technology solutions.
             </p>
           </div>
           
@@ -43,7 +43,7 @@ export default function About() {
                 Feran and Josh are two young budding entrepreneurs with a passion for connecting people and a deep passion for Christ. After becoming good friends, Feran and Josh decided to begin a couple ventures together and eventually sensed a call from God to house these ongoing apps and future apps under the umbrella of what was to be Agape Labs.
               </p>
               <p className="text-lg text-gray-700 mb-6">
-                Agape Labs was established as a think tank and melting pot for the very best our creativity, imagination and leading innovations in the tech space are able to offer…all pointed towards our core mission; spreading God's love through tech.
+                Agape Labs was established as a think tank and melting pot for the very best our creativity, imagination and leading innovations in the tech space are able to offer…all pointed towards our core mission; spreading God&apos;s love through tech.
               </p>
             </div>
           </div>
@@ -68,7 +68,7 @@ export default function About() {
               <div className="bg-gray-50 p-8 rounded-2xl">
                 <h3 className="text-xl font-semibold mb-4">Service</h3>
                 <p className="text-gray-700">
-                  At the core of our work here at Agape is service. Mark 10:45, Christ teaches and embodies true servant leadership and we are continually striving to serve communities and individuals's needs.
+                  At the core of our work here at Agape is service. Mark 10:45, Christ teaches and embodies true servant leadership and we are continually striving to serve communities and individuals&apos; needs.
                 </p>
               </div>
             </div>

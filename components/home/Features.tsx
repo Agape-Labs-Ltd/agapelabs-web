@@ -55,19 +55,19 @@ const Features = () => {
       });
     }, { threshold: 0.1 });
 
-    if (sectionRef.current) {
-      sectionRef.current.querySelectorAll('.feature-item').forEach((item) => {
+    const section = sectionRef.current;
+    if (section) {
+      const items = section.querySelectorAll('.feature-item');
+      items.forEach((item) => {
         observer.observe(item);
       });
-    }
 
-    return () => {
-      if (sectionRef.current) {
-        sectionRef.current.querySelectorAll('.feature-item').forEach((item) => {
+      return () => {
+        items.forEach((item) => {
           observer.unobserve(item);
         });
-      }
-    };
+      };
+    }
   }, []);
 
   return (
@@ -76,7 +76,7 @@ const Features = () => {
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold mb-4">Our Mission & Values</h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            At Agape Labs, we're committed to developing technology solutions that embody Christian love and service.
+            At Agape Labs, we&apos;re committed to developing technology solutions that embody Christian love and service.
           </p>
         </div>
 

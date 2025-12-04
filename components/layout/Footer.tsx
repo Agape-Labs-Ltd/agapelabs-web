@@ -28,7 +28,7 @@ const Footer = () => {
               />
             </div>
             <p className="text-gray-400 mb-4 max-w-md">
-              Spreading God's love through innovative technology solutions, dedicated to making a positive impact in the digital world.
+              Spreading God&apos;s love through innovative technology solutions, dedicated to making a positive impact in the digital world.
             </p>
             <div className="flex space-x-4">
               <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-white transition-colors">

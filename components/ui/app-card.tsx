@@ -1,11 +1,12 @@
 "use client";
 
 import * as React from "react";
+import Image from "next/image";
 import { ArrowRight } from "lucide-react";
 import { cn } from "@/lib/utils"; // Assuming you have a cn utility for merging class names
 
 // Define the props interface for type safety and clarity
-export interface AppCardProps extends React.HTMLAttributes<HTMLDivElement> {
+export interface AppCardProps extends React.AnchorHTMLAttributes<HTMLAnchorElement> {
   imgSrc: string;
   title: string;
   description: string;
@@ -13,7 +14,7 @@ export interface AppCardProps extends React.HTMLAttributes<HTMLDivElement> {
   linkText?: string;
 }
 
-const AppCard = React.forwardRef<HTMLDivElement, AppCardProps>(
+const AppCard = React.forwardRef<HTMLAnchorElement, AppCardProps>(
   ({ className, imgSrc, title, description, link, linkText = "View App", ...props }, ref) => {
     return (
       <a
@@ -28,13 +29,14 @@ const AppCard = React.forwardRef<HTMLDivElement, AppCardProps>(
         {...props}
       >
         {/* Card Image Section */}
-        <div className="aspect-video overflow-hidden flex items-center justify-center">
-          <img
+        <div className="aspect-video overflow-hidden flex items-center justify-center relative">
+          <Image
             src={imgSrc}
             alt={title}
-            className="h-full w-full object-cover transition-transform duration-700 ease-in-out group-hover:scale-110"
+            fill
+            className="object-cover transition-transform duration-700 ease-in-out group-hover:scale-110"
             style={title === "Rhema" ? { transform: "scale(0.9)" } : undefined}
-            loading="lazy"
+            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
           />
         </div>
 

@@ -19,7 +19,7 @@ function Hero() {
                 Spreading <span className="text-gradient-prismatic">God&apos;s Love</span> Through Tech
               </h1>
               <p className="text-lg md:text-xl leading-relaxed text-muted-foreground max-w-lg text-left">
-                 We're on a mission to build the next generation of digital tools to help believers all around the world grow in their relationship with Christ.
+                 We&apos;re on a mission to build the next generation of digital tools to help believers all around the world grow in their relationship with Christ.
               </p>
             </div>
             <div className="flex flex-row gap-4">

@@ -25,11 +25,7 @@ const itemVariants = {
   hidden: { opacity: 0, y: 20 },
   visible: {
     opacity: 1,
-    y: 0,
-    transition: {
-      duration: 0.5,
-      ease: 'easeOut'
-    }
+    y: 0
   }
 };
 
@@ -60,7 +56,11 @@ export function BentoGrid() {
           className="grid grid-cols-1 md:grid-cols-6 gap-4"
         >
           {/* Large feature card */}
-          <motion.div variants={itemVariants} className="md:col-span-4 md:row-span-2">
+          <motion.div 
+            variants={itemVariants} 
+            transition={{ duration: 0.5 }}
+            className="md:col-span-4 md:row-span-2"
+          >
             <BentoCard
               className="h-full"
               title="Faith-Driven Development"
@@ -82,7 +82,11 @@ export function BentoGrid() {
           </motion.div>
 
           {/* Small cards */}
-          <motion.div variants={itemVariants} className="md:col-span-2">
+          <motion.div 
+            variants={itemVariants} 
+            transition={{ duration: 0.5 }}
+            className="md:col-span-2"
+          >
             <BentoCard
               className="h-full"
               title="Global Reach"
@@ -92,7 +96,11 @@ export function BentoGrid() {
             />
           </motion.div>
 
-          <motion.div variants={itemVariants} className="md:col-span-2">
+          <motion.div 
+            variants={itemVariants} 
+            transition={{ duration: 0.5 }}
+            className="md:col-span-2"
+          >
             <BentoCard
               className="h-full"
               title="24/7 Support"
@@ -103,7 +111,11 @@ export function BentoGrid() {
           </motion.div>
 
           {/* Medium card */}
-          <motion.div variants={itemVariants} className="md:col-span-3">
+          <motion.div 
+            variants={itemVariants} 
+            transition={{ duration: 0.5 }}
+            className="md:col-span-3"
+          >
             <BentoCard
               className="h-full"
               title="Modern Tech Stack"
@@ -124,7 +136,11 @@ export function BentoGrid() {
             </BentoCard>
           </motion.div>
 
-          <motion.div variants={itemVariants} className="md:col-span-3">
+          <motion.div 
+            variants={itemVariants} 
+            transition={{ duration: 0.5 }}
+            className="md:col-span-3"
+          >
             <BentoCard
               className="h-full"
               title="Innovation First"
