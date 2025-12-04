@@ -9,7 +9,7 @@ export default function About() {
   const [imgError, setImgError] = useState(false);
   
   return (
-    <main className="pt-24 md:pt-28">
+    <main className="pt-28 md:pt-32">
       <Header />
       
       <section className="py-16 md:py-24">

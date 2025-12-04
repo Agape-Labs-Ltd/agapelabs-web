@@ -6,7 +6,7 @@ import { CTASection } from '@/components/home/CTASection';
 
 export default function Home() {
   return (
-    <main className="bg-white pt-24 md:pt-28">
+    <main className="bg-white pt-28 md:pt-32">
       <Header />
       <Hero />
       <EnhancedFeatures />
