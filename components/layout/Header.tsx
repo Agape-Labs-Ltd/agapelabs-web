@@ -17,15 +17,15 @@ const Header = () => {
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+      className={`fixed top-10 left-0 right-0 z-50 transition-all duration-300 ${
         isScrolled
           ? 'py-2 bg-white/80 backdrop-blur-xl border-b border-black/10 shadow-lg'
           : 'py-4 bg-transparent border-b border-black/5'
       }`}
     >
       <div className="container flex items-center justify-between">
-        <Link href="/" className="flex items-center">
-          <div className="relative w-[200px] h-[70]">
+        <Link href="/" className="flex items-center -ml-3">
+          <div className="relative w-[200px] h-[50px] flex items-center">
             {logoError && (
               <div className="absolute inset-0 flex items-center justify-center text-gray-400">
                 <p className="text-sm">Logo</p>
@@ -34,8 +34,10 @@ const Header = () => {
             <Image
               src={'/images/agape-labs-logo.png?v=2'}
               alt="Agape Labs Logo"
-              fill
-              style={{ objectFit: 'contain', display: logoError ? 'none' : 'block' }}
+              width={200}
+              height={50}
+              className="object-contain"
+              style={{ display: logoError ? 'none' : 'block' }}
               priority
               onError={() => setLogoError(true)}
             />
@@ -50,10 +52,10 @@ const Header = () => {
           <Link href="/about" className="text-black hover:text-gray-600 font-medium transition">
             About
           </Link>
-          <Link href="/projects" className="text-black hover:text-gray-600 font-medium transition">
-            Projects
+          <Link href="/apps" className="text-black hover:text-gray-600 font-medium transition">
+            Apps
           </Link>
-          <Link href="/contact" className="px-6 py-2.5 bg-black text-white rounded-lg font-medium hover:bg-gray-800 transition">
+          <Link href="/contact" className="px-6 py-2.5 bg-black text-white rounded-2xl font-medium hover:bg-gray-800 transition">
             Contact Us
           </Link>
         </nav>
@@ -84,10 +86,10 @@ const Header = () => {
             <Link href="/about" className="text-black hover:text-gray-600 font-medium py-2 transition" onClick={toggleMenu}>
               About
             </Link>
-            <Link href="/projects" className="text-black hover:text-gray-600 font-medium py-2 transition" onClick={toggleMenu}>
-              Projects
+            <Link href="/apps" className="text-black hover:text-gray-600 font-medium py-2 transition" onClick={toggleMenu}>
+              Apps
             </Link>
-            <Link href="/contact" className="px-6 py-2.5 bg-black text-white rounded-lg font-medium hover:bg-gray-800 transition w-full text-center" onClick={toggleMenu}>
+            <Link href="/contact" className="px-6 py-2.5 bg-black text-white rounded-2xl font-medium hover:bg-gray-800 transition w-full text-center" onClick={toggleMenu}>
               Contact Us
             </Link>
           </div>

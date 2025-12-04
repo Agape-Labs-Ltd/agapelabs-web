@@ -90,10 +90,10 @@ export function EnhancedFeatures() {
             return (
               <motion.div key={index} variants={itemVariants}>
                 <TiltCard className="h-full">
-                  <div className="relative h-full bg-white p-8 rounded-xl border border-black/10 hover:border-black/20 transition-all duration-300 group shadow-lg hover:shadow-xl">
+                  <div className="relative h-full bg-white p-8 rounded-2xl border border-black/10 hover:border-black/20 transition-all duration-300 group shadow-lg hover:shadow-xl">
                     {/* Gradient glow effect */}
                     <div
-                      className={`absolute -inset-0.5 bg-gradient-to-r ${feature.gradient} opacity-0 group-hover:opacity-100 blur transition-all duration-500 rounded-xl -z-10`}
+                      className={`absolute -inset-0.5 bg-gradient-to-r ${feature.gradient} opacity-0 group-hover:opacity-100 blur transition-all duration-500 rounded-2xl -z-10`}
                     />
 
                     {/* Icon with animation */}
@@ -103,7 +103,7 @@ export function EnhancedFeatures() {
                       className="mb-5"
                     >
                       <div
-                        className={`inline-flex p-3 rounded-lg bg-gradient-to-br ${feature.gradient}`}
+                        className={`inline-flex p-3 rounded-2xl bg-gradient-to-br ${feature.gradient}`}
                       >
                         <Icon className="w-8 h-8 text-white" />
                       </div>
@@ -118,7 +118,7 @@ export function EnhancedFeatures() {
 
                     {/* Decorative element */}
                     <div
-                      className={`absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r ${feature.gradient} opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-b-xl`}
+                      className={`absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r ${feature.gradient} opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-b-2xl`}
                     />
                   </div>
                 </TiltCard>

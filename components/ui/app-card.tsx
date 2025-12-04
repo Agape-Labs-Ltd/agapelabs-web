@@ -5,7 +5,7 @@ import { ArrowRight } from "lucide-react";
 import { cn } from "@/lib/utils"; // Assuming you have a cn utility for merging class names
 
 // Define the props interface for type safety and clarity
-export interface ProjectCardProps extends React.HTMLAttributes<HTMLDivElement> {
+export interface AppCardProps extends React.HTMLAttributes<HTMLDivElement> {
   imgSrc: string;
   title: string;
   description: string;
@@ -13,8 +13,8 @@ export interface ProjectCardProps extends React.HTMLAttributes<HTMLDivElement> {
   linkText?: string;
 }
 
-const ProjectCard = React.forwardRef<HTMLDivElement, ProjectCardProps>(
-  ({ className, imgSrc, title, description, link, linkText = "View Project", ...props }, ref) => {
+const AppCard = React.forwardRef<HTMLDivElement, AppCardProps>(
+  ({ className, imgSrc, title, description, link, linkText = "View App", ...props }, ref) => {
     return (
       <a
         href={link}
@@ -55,6 +55,6 @@ const ProjectCard = React.forwardRef<HTMLDivElement, ProjectCardProps>(
     );
   }
 );
-ProjectCard.displayName = "ProjectCard";
+AppCard.displayName = "AppCard";
 
-export { ProjectCard };
+export { AppCard };

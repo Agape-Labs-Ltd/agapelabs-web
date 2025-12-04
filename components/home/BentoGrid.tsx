@@ -69,11 +69,11 @@ export function BentoGrid() {
               gradient="from-blue-600 to-cyan-600"
             >
               <div className="mt-6 grid grid-cols-2 gap-4">
-                <div className="bg-white/5 p-4 rounded-lg backdrop-blur">
+                <div className="bg-white/5 p-4 rounded-2xl backdrop-blur">
                   <div className="text-2xl font-bold text-blue-400">100%</div>
                   <div className="text-sm text-gray-400">Faith-Driven</div>
                 </div>
-                <div className="bg-white/5 p-4 rounded-lg backdrop-blur">
+                <div className="bg-white/5 p-4 rounded-2xl backdrop-blur">
                   <div className="text-2xl font-bold text-purple-400">∞</div>
                   <div className="text-sm text-gray-400">Dedication</div>
                 </div>

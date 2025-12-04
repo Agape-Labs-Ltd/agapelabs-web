@@ -49,11 +49,10 @@ export function CTASection() {
             viewport={{ once: true }}
             className="text-4xl md:text-6xl font-bold mb-6 text-black"
           >
-            Ready to Transform{' '}
+            Embrace Tools Designed for {' '}
             <span className="text-gradient-prismatic">
-              Your Vision
+              Spiritual Growth
             </span>
-            {' '}Into Reality?
           </motion.h2>
 
           {/* Description */}
@@ -64,8 +63,7 @@ export function CTASection() {
             viewport={{ once: true }}
             className="text-xl text-gray-600 mb-12 max-w-2xl mx-auto"
           >
-            Let&apos;s collaborate to create technology solutions that make a lasting impact.
-            Get in touch today and discover how we can help bring your ideas to life.
+            Explore our collection of faith-driven applications crafted to support and enrich your spiritual journey.
           </motion.p>
 
           {/* CTA Buttons */}
@@ -74,16 +72,16 @@ export function CTASection() {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.5 }}
             viewport={{ once: true }}
-            className="flex flex-col sm:flex-row gap-4 justify-center items-center"
+            className="flex flex-col sm:flex-row gap-6 sm:gap-4 justify-center items-center w-full sm:w-auto"
           >
-            <Link href="/contact">
+            <Link href="/apps">
               <MagneticButton className="group relative">
                 {/* Animated gradient border */}
-                <div className="absolute -inset-1 bg-gradient-to-r from-violet-600 via-cyan-500 to-yellow-500 rounded-lg opacity-75 group-hover:opacity-100 blur group-hover:blur-xl transition-all duration-500 animate-gradient-x" />
+                <div className="absolute -inset-1 bg-gradient-to-r from-violet-600 via-cyan-500 to-yellow-500 rounded-2xl opacity-75 group-hover:opacity-100 blur group-hover:blur-xl transition-all duration-500 animate-gradient-x" />
 
                 {/* Button content */}
-                <span className="relative bg-black text-white border border-black/20 px-8 py-4 rounded-lg flex items-center gap-2 font-medium">
-                  Start Your Project
+                <span className="relative bg-black text-white border border-black/20 px-8 py-4 rounded-2xl flex items-center gap-2 font-medium">
+                  See our Apps
                   <motion.span
                     animate={{ x: [0, 5, 0] }}
                     transition={{ duration: 1.5, repeat: Infinity }}
@@ -96,7 +94,7 @@ export function CTASection() {
 
             <Link href="/about">
               <MagneticButton>
-                <span className="border border-black/20 bg-black/5 backdrop-blur px-8 py-4 rounded-lg hover:bg-black/10 hover:border-black/40 transition-all font-medium text-black">
+                <span className="border border-black/20 bg-black/5 backdrop-blur px-8 py-4 rounded-2xl hover:bg-black/10 hover:border-black/40 transition-all font-medium text-black">
                   Learn More About Us
                 </span>
               </MagneticButton>
@@ -113,7 +111,7 @@ export function CTASection() {
           >
             <div className="flex items-center gap-2">
               <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse" />
-              <span>Available for new projects</span>
+              <span>Available for new apps</span>
             </div>
             <div className="flex items-center gap-2">
               <span>⚡</span>

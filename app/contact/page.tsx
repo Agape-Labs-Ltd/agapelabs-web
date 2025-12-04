@@ -69,7 +69,7 @@ export default function Contact() {
   };
 
   return (
-    <main>
+    <main className="pt-24 md:pt-28">
       <Header />
       
       <section className="py-16 md:py-24">
@@ -83,13 +83,13 @@ export default function Contact() {
           
           <div className="max-w-2xl mx-auto">
             {formStatus.success && (
-              <div className="mb-8 p-4 bg-green-50 text-green-700 rounded-md">
+              <div className="mb-8 p-4 bg-green-50 text-green-700 rounded-2xl">
                 {formStatus.message}
               </div>
             )}
-            
+
             {formStatus.error && (
-              <div className="mb-8 p-4 bg-red-50 text-red-700 rounded-md">
+              <div className="mb-8 p-4 bg-red-50 text-red-700 rounded-2xl">
                 {formStatus.message}
               </div>
             )}
@@ -106,7 +106,7 @@ export default function Contact() {
                   value={formData.name}
                   onChange={handleChange}
                   required
-                  className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                  className="w-full px-4 py-2 border border-gray-300 rounded-2xl focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
                 />
               </div>
               
@@ -121,7 +121,7 @@ export default function Contact() {
                   value={formData.email}
                   onChange={handleChange}
                   required
-                  className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                  className="w-full px-4 py-2 border border-gray-300 rounded-2xl focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
                 />
               </div>
               
@@ -136,7 +136,7 @@ export default function Contact() {
                   value={formData.subject}
                   onChange={handleChange}
                   required
-                  className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                  className="w-full px-4 py-2 border border-gray-300 rounded-2xl focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
                 />
               </div>
               
@@ -151,7 +151,7 @@ export default function Contact() {
                   onChange={handleChange}
                   required
                   rows={6}
-                  className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                  className="w-full px-4 py-2 border border-gray-300 rounded-2xl focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
                 ></textarea>
               </div>
               
@@ -159,7 +159,7 @@ export default function Contact() {
                 <button
                   type="submit"
                   disabled={formStatus.submitting}
-                  className="w-full py-3 px-4 bg-blue-600 hover:bg-blue-700 text-white font-medium rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 transition disabled:opacity-75"
+                  className="w-full py-3 px-4 bg-blue-600 hover:bg-blue-700 text-white font-medium rounded-2xl focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 transition disabled:opacity-75"
                 >
                   {formStatus.submitting ? 'Sending...' : 'Send Message'}
                 </button>

@@ -144,7 +144,7 @@
   }
 
   .text-gradient-prismatic {
-    background: linear-gradient(135deg, #8B5CF6 0%, #3B82F6 20%, #06B6D4 40%, #10B981 60%, #F59E0B 80%, #EF4444 100%);
+    background: linear-gradient(135deg, #9D7FE8 0%, #6B9FE8 35%, #C77DBB 65%, #E8C875 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
