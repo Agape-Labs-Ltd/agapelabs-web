@@ -1,14 +1,16 @@
 import Header from '@/components/layout/Header';
 import Footer from '@/components/layout/Footer';
-import Hero from '@/components/home/Hero';
-import Features from '@/components/home/Features';
+import { Hero } from '@/components/ui/hero-with-group-of-images-text-and-two-buttons';
+import { EnhancedFeatures } from '@/components/home/EnhancedFeatures';
+import { CTASection } from '@/components/home/CTASection';
 
 export default function Home() {
   return (
-    <main>
+    <main className="bg-white pt-24 md:pt-28">
       <Header />
       <Hero />
-      <Features />
+      <EnhancedFeatures />
+      <CTASection />
       <Footer />
     </main>
   );

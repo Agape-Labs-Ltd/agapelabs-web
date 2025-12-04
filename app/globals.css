@@ -6,6 +6,35 @@
   --primary: #000000;
   --secondary: #ffffff;
   --accent: #3b82f6;
+
+  /* Modern Prismatic Gradient Definitions - Full Spectrum */
+  --gradient-prismatic: linear-gradient(135deg, #8B5CF6 0%, #3B82F6 20%, #06B6D4 40%, #10B981 60%, #F59E0B 80%, #EF4444 100%);
+  --gradient-prismatic-soft: linear-gradient(135deg, #A78BFA 0%, #60A5FA 25%, #34D399 50%, #FBBF24 75%, #F87171 100%);
+  --gradient-holographic: linear-gradient(135deg, #7C3AED 0%, #2563EB 20%, #0891B2 35%, #059669 50%, #D97706 70%, #DC2626 90%);
+
+  /* Legacy gradients (keeping for backwards compatibility) */
+  --gradient-1: var(--gradient-prismatic);
+  --gradient-2: var(--gradient-prismatic-soft);
+  --gradient-3: var(--gradient-holographic);
+  --gradient-faith: var(--gradient-prismatic);
+
+  /* Accent colors - Updated to match prismatic theme */
+  --accent-violet: #8B5CF6;
+  --accent-blue: #3B82F6;
+  --accent-cyan: #06B6D4;
+  --accent-green: #10B981;
+  --accent-yellow: #F59E0B;
+  --accent-orange: #F97316;
+  --accent-red: #EF4444;
+
+  /* Glass morphism */
+  --glass-bg: rgba(255, 255, 255, 0.05);
+  --glass-border: rgba(255, 255, 255, 0.1);
+
+  /* Shadows */
+  --shadow-glow: 0 0 40px rgba(139, 92, 246, 0.3);
+  --shadow-glow-prismatic: 0 0 60px rgba(139, 92, 246, 0.4);
+  --shadow-lift: 0 20px 60px rgba(0, 0, 0, 0.3);
 }
 
 @theme inline {
@@ -96,13 +125,48 @@
   .animate-fade {
     @apply transition-opacity duration-300;
   }
-  
+
   .animate-slide {
     @apply transition-transform duration-500;
   }
 
   .animate-fade-in-up {
     animation: fadeInUp 0.8s ease forwards;
+  }
+
+  .animate-gradient-x {
+    background-size: 200% 200%;
+    animation: gradient-x 3s ease infinite;
+  }
+
+  .text-gradient {
+    @apply bg-gradient-to-r from-violet-600 via-blue-500 via-cyan-500 via-green-500 via-yellow-500 to-red-500 bg-clip-text text-transparent;
+  }
+
+  .text-gradient-prismatic {
+    background: linear-gradient(135deg, #9D7FE8 0%, #6B9FE8 35%, #C77DBB 65%, #E8C875 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .text-gradient-stripe {
+    background: linear-gradient(90deg, #0066FF 0%, #A259FF 25%, #FF4D8D 50%, #FFB84D 75%, #0066FF 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .glass {
+    @apply bg-white/5 backdrop-blur-xl border border-white/10;
+  }
+
+  .glow {
+    box-shadow: var(--shadow-glow);
+  }
+
+  .glow-prismatic {
+    box-shadow: var(--shadow-glow-prismatic);
   }
 }
 
@@ -114,6 +178,48 @@
   100% {
     opacity: 1;
     transform: translateY(0);
+  }
+}
+
+@keyframes gradient-x {
+  0%, 100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+@keyframes gradient-y {
+  0%, 100% {
+    background-position: 50% 0%;
+  }
+  50% {
+    background-position: 50% 100%;
+  }
+}
+
+@keyframes gradient-xy {
+  0%, 100% {
+    background-position: 0% 0%;
+  }
+  25% {
+    background-position: 100% 0%;
+  }
+  50% {
+    background-position: 100% 100%;
+  }
+  75% {
+    background-position: 0% 100%;
+  }
+}
+
+@keyframes pulse-glow {
+  0%, 100% {
+    box-shadow: 0 0 20px rgba(59, 130, 246, 0.3);
+  }
+  50% {
+    box-shadow: 0 0 40px rgba(59, 130, 246, 0.6);
   }
 }
 

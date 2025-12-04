@@ -72,7 +72,11 @@ module.exports = {
   		animation: {
   			'fade-in': 'fadeIn 0.5s ease-in-out',
   			'slide-up': 'slideUp 0.5s ease-in-out',
-  			'slide-in-right': 'slideInRight 0.5s ease-in-out'
+  			'slide-in-right': 'slideInRight 0.5s ease-in-out',
+  			'gradient-x': 'gradient-x 3s ease infinite',
+  			'gradient-y': 'gradient-y 3s ease infinite',
+  			'gradient-xy': 'gradient-xy 6s ease infinite',
+  			'pulse-glow': 'pulse-glow 2s ease-in-out infinite'
   		},
   		keyframes: {
   			fadeIn: {
@@ -102,7 +106,48 @@ module.exports = {
   					transform: 'translateX(0)',
   					opacity: '1'
   				}
+  			},
+  			'gradient-x': {
+  				'0%, 100%': {
+  					'background-position': '0% 50%'
+  				},
+  				'50%': {
+  					'background-position': '100% 50%'
+  				}
+  			},
+  			'gradient-y': {
+  				'0%, 100%': {
+  					'background-position': '50% 0%'
+  				},
+  				'50%': {
+  					'background-position': '50% 100%'
+  				}
+  			},
+  			'gradient-xy': {
+  				'0%, 100%': {
+  					'background-position': '0% 0%'
+  				},
+  				'25%': {
+  					'background-position': '100% 0%'
+  				},
+  				'50%': {
+  					'background-position': '100% 100%'
+  				},
+  				'75%': {
+  					'background-position': '0% 100%'
+  				}
+  			},
+  			'pulse-glow': {
+  				'0%, 100%': {
+  					'box-shadow': '0 0 20px rgba(59, 130, 246, 0.3)'
+  				},
+  				'50%': {
+  					'box-shadow': '0 0 40px rgba(59, 130, 246, 0.6)'
+  				}
   			}
+  		},
+  		backgroundImage: {
+  			'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))'
   		},
   		borderRadius: {
   			lg: 'var(--radius)',
