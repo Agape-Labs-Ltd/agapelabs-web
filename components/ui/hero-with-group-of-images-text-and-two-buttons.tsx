@@ -5,7 +5,7 @@ import Image from "next/image";
 
 function Hero() {
   return (
-    <div className="w-full py-16 md:py-20 lg:py-32">
+    <div className="w-full pt-4 pb-16 md:pt-6 md:pb-20 lg:pt-8 lg:pb-32">
       <div className="container mx-auto">
         <div className="grid grid-cols-1 gap-12 lg:gap-16 items-center md:grid-cols-2">
           <div className="flex gap-6 flex-col">
