@@ -25,7 +25,7 @@ const Header = () => {
     >
       <div className="container flex items-center justify-between">
         <Link href="/" className="flex items-center -ml-3">
-          <div className="relative w-[200px] h-[50px] flex items-center">
+          <div className="relative w-[160px] h-[40px] flex items-center">
             {logoError && (
               <div className="absolute inset-0 flex items-center justify-center text-gray-400">
                 <p className="text-sm">Logo</p>
@@ -34,8 +34,8 @@ const Header = () => {
             <Image
               src={'/images/agape-labs-logo.png?v=2'}
               alt="Agape Labs Logo"
-              width={200}
-              height={50}
+              width={160}
+              height={40}
               className="object-contain"
               style={{ display: logoError ? 'none' : 'block' }}
               priority
