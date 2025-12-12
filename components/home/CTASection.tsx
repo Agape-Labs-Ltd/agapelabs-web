@@ -2,7 +2,6 @@
 
 import { motion } from 'framer-motion';
 import Link from 'next/link';
-import { MagneticButton } from '@/components/ui/magnetic-button';
 import { Spotlight } from '@/components/ui/spotlight';
 import { IconArrowRight, IconSparkles } from '@tabler/icons-react';
 
@@ -74,30 +73,26 @@ export function CTASection() {
             viewport={{ once: true }}
             className="flex flex-col sm:flex-row gap-6 sm:gap-4 justify-center items-center w-full sm:w-auto"
           >
-            <Link href="/apps">
-              <MagneticButton className="group relative">
-                {/* Animated gradient border */}
-                <div className="absolute -inset-1 bg-gradient-to-r from-violet-600 via-cyan-500 to-yellow-500 rounded-2xl opacity-75 group-hover:opacity-100 blur group-hover:blur-xl transition-all duration-500 animate-gradient-x" />
+            <Link href="/apps" className="group relative">
+              {/* Animated gradient border */}
+              <div className="absolute -inset-1 bg-gradient-to-r from-violet-600 via-cyan-500 to-yellow-500 rounded-2xl opacity-75 group-hover:opacity-100 blur group-hover:blur-xl transition-all duration-500 animate-gradient-x" />
 
-                {/* Button content */}
-                <span className="relative bg-black text-white border border-black/20 px-8 py-4 rounded-2xl flex items-center gap-2 font-medium">
-                  See our Apps
-                  <motion.span
-                    animate={{ x: [0, 5, 0] }}
-                    transition={{ duration: 1.5, repeat: Infinity }}
-                  >
-                    <IconArrowRight className="w-5 h-5" />
-                  </motion.span>
-                </span>
-              </MagneticButton>
+              {/* Button content */}
+              <span className="relative bg-black text-white border border-black/20 px-8 py-4 rounded-2xl flex items-center gap-2 font-medium">
+                See our Apps
+                <motion.span
+                  animate={{ x: [0, 5, 0] }}
+                  transition={{ duration: 1.5, repeat: Infinity }}
+                >
+                  <IconArrowRight className="w-5 h-5" />
+                </motion.span>
+              </span>
             </Link>
 
             <Link href="/about">
-              <MagneticButton>
-                <span className="border border-black/20 bg-black/5 backdrop-blur px-8 py-4 rounded-2xl hover:bg-black/10 hover:border-black/40 transition-all font-medium text-black">
-                  Learn More About Us
-                </span>
-              </MagneticButton>
+              <span className="border border-black/20 bg-black/5 backdrop-blur px-8 py-4 rounded-2xl hover:bg-black/10 hover:border-black/40 transition-all font-medium text-black">
+                Learn More About Us
+              </span>
             </Link>
           </motion.div>
 

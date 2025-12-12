@@ -96,18 +96,14 @@ export function EnhancedFeatures() {
                       className={`absolute -inset-0.5 bg-gradient-to-r ${feature.gradient} opacity-0 group-hover:opacity-100 blur transition-all duration-500 rounded-2xl -z-10`}
                     />
 
-                    {/* Icon with animation */}
-                    <motion.div
-                      whileHover={{ rotate: 360, scale: 1.1 }}
-                      transition={{ duration: 0.6, ease: 'easeInOut' }}
-                      className="mb-5"
-                    >
+                    {/* Icon - static */}
+                    <div className="mb-5">
                       <div
                         className={`inline-flex p-3 rounded-2xl bg-gradient-to-br ${feature.gradient}`}
                       >
                         <Icon className="w-8 h-8 text-white" />
                       </div>
-                    </motion.div>
+                    </div>
 
                     <h3 className="text-xl font-semibold mb-3 text-black">
                       {feature.title}
