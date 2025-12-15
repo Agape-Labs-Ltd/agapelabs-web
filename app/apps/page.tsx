@@ -23,6 +23,8 @@ export default function AppsPage() {
               description="Memorise Scripture with Rhema's fun, Duolingo-style games. Short, adaptive microsessions build lasting memory, turning practice into a deep meditation on God's Word."
               link="https://rhema-app.com"
               linkText="Visit site"
+              downloadLink="https://apps.apple.com/gb/app/rhema-memorise-and-meditate/id6750488143"
+              instagramLink="https://www.instagram.com/rhema_app_/"
             />
 
             <AppCard
@@ -31,6 +33,8 @@ export default function AppsPage() {
               description="Your Bible, reimagined for iPad and Apple Pencil. Digible lets you freely write, draw, and annotate Scripture, making your personal study more engaging and interactive than ever."
               link="https://digibleapp.com"
               linkText="Visit site"
+              downloadLink="https://apps.apple.com/gb/app/digible-your-digital-bible/id6748240828"
+              instagramLink="https://www.instagram.com/digible.app/"
             />
           </div>
         </div>
