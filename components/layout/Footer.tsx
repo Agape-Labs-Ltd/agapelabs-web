@@ -51,9 +51,8 @@ const Footer = () => {
           <div>
             <h3 className="text-lg font-semibold mb-4">Contact Us</h3>
             <address className="text-gray-400 not-italic">
-              <p className="mb-2">Email: <a href="mailto:team@agapelabs.co.uk" className="hover:text-white transition-colors">team@agapelabs.co.uk</a></p>
               <p className="mb-2">Phone: <a href="tel:+447701073329" className="hover:text-white transition-colors">(+44) 07701073329</a></p>
-              <p>2 Gas Street<br />Coventry<br />CV4FG</p>
+              <p>United Kingdom</p>
             </address>
           </div>
         </div>

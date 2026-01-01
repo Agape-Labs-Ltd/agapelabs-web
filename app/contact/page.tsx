@@ -169,12 +169,9 @@ export default function Contact() {
             <div className="mt-12 text-center">
               <h3 className="text-xl font-semibold mb-4">Other Ways to Reach Us</h3>
               <p className="text-gray-600">
-                Email: <a href="mailto:team@agapelabs.co.uk" className="text-blue-600 hover:underline">team@agapelabs.co.uk</a><br />
                 Phone: <a href="tel:+447701073329" className="text-blue-600 hover:underline">(+44) 07701073329</a><br />
                 <span className="block mt-2">
-                  2 Gas Street<br />
-                  Coventry<br />
-                  CV4FG
+                  United Kingdom
                 </span>
               </p>
             </div>
