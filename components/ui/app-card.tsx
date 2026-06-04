@@ -14,11 +14,12 @@ export interface AppCardProps extends React.HTMLAttributes<HTMLDivElement> {
   link: string;
   linkText?: string;
   downloadLink?: string;
+  googlePlayLink?: string;
   instagramLink?: string;
 }
 
 const AppCard = React.forwardRef<HTMLDivElement, AppCardProps>(
-  ({ className, imgSrc, title, description, link, linkText = "View App", downloadLink = "#", instagramLink = "#", ...props }, ref) => {
+  ({ className, imgSrc, title, description, link, linkText = "View App", downloadLink = "#", googlePlayLink, instagramLink = "#", ...props }, ref) => {
     return (
       <div
         ref={ref}
@@ -50,7 +51,7 @@ const AppCard = React.forwardRef<HTMLDivElement, AppCardProps>(
           {/* Action Buttons Row */}
           <div className="mt-4 flex items-center gap-3 justify-between">
             <div className="flex items-center gap-3">
-              {/* Download Button with Rainbow Gradient Border */}
+              {/* iOS Download Button with Rainbow Gradient Border */}
               <a
                 href={downloadLink}
                 className="group/download relative"
@@ -66,6 +67,25 @@ const AppCard = React.forwardRef<HTMLDivElement, AppCardProps>(
                   Download
                 </span>
               </a>
+
+              {/* Google Play Download Button with Rainbow Gradient Border */}
+              {googlePlayLink && (
+                <a
+                  href={googlePlayLink}
+                  className="group/googleplay relative"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  {/* Animated gradient border */}
+                  <div className="absolute -inset-0.5 bg-gradient-to-r from-violet-600 via-cyan-500 to-yellow-500 rounded-xl opacity-75 group-hover/googleplay:opacity-100 blur-sm group-hover/googleplay:blur transition-all duration-500 animate-gradient-x" />
+
+                  {/* Button content */}
+                  <span className="relative bg-gray-100 text-black px-4 py-2.5 rounded-xl flex items-center justify-center gap-2 font-medium text-sm whitespace-nowrap">
+                    <Image src="/images/google-play-icon.png" alt="Google Play" width={16} height={16} className="h-4 w-4" />
+                    Download
+                  </span>
+                </a>
+              )}
 
               {/* Instagram Button */}
               <a

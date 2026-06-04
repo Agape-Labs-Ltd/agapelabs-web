@@ -24,6 +24,7 @@ export default function AppsPage() {
               link="https://rhema-app.com"
               linkText="Visit site"
               downloadLink="https://apps.apple.com/gb/app/rhema-memorise-and-meditate/id6750488143"
+              googlePlayLink="https://play.google.com/store/apps/details?id=com.agape.rhema&pcampaignid=web_share"
               instagramLink="https://www.instagram.com/rhema_app_/"
             />
 
