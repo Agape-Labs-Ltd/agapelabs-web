@@ -422,8 +422,8 @@ body::before {
   .hero__dove { width: min(880px, 122vw); }
   .hero__inner { padding: 120px 0 80px; }
   .hero__title { font-size: clamp(38px, 13vw, 68px); margin-top: 20px; }
-  .hero__lede { margin-top: 24px; font-size: clamp(15px, 4vw, 19px); max-width: 100%; }
-  .hero__cta-row { margin-top: 28px; }
+  .hero__lede { display: none; }
+  .hero__cta-row { margin-top: 36px; }
 }
 
 /* ── SECTION SHELL ───────────────────────────────────────────── */
