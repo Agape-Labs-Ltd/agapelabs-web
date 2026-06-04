@@ -419,6 +419,11 @@ body::before {
 @media (max-width: 780px) {
   .hero__meta { flex-direction: column; gap: 16px; align-items: start; }
   .hero__meta .verse { text-align: left; }
+  .hero__dove { width: min(880px, 122vw); }
+  .hero__inner { padding: 120px 0 80px; }
+  .hero__title { font-size: clamp(38px, 13vw, 68px); margin-top: 20px; }
+  .hero__lede { margin-top: 24px; font-size: clamp(15px, 4vw, 19px); max-width: 100%; }
+  .hero__cta-row { margin-top: 28px; }
 }
 
 /* ── SECTION SHELL ───────────────────────────────────────────── */
@@ -765,6 +770,10 @@ section { position: relative; }
 @media (max-width: 780px) {
   .app-card { grid-template-columns: 1fr; gap: 32px; padding: 48px 0; }
   .app-card--alt .app-card__body { order: 0; }
+  .coming-showcase { grid-template-columns: repeat(4, 1fr); gap: 12px; padding: 28px; }
+}
+@media (max-width: 480px) {
+  .coming-showcase { grid-template-columns: repeat(4, 1fr); gap: 8px; padding: 18px; }
 }
 
 /* ── ABOUT / OUR STORY ──────────────────────────────────────── */
