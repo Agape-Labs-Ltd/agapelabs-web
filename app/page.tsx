@@ -48,7 +48,7 @@ export default function Home() {
           </h1>
 
           <p className="hero__lede">
-            Agape Labs is a Christian tech startup committed to stewarding the latest technologies in such a way that the hearts of God's people would be stirred to love Him and His people more.
+            Agape Labs is a Christian tech startup committed to stewarding the latest technologies in such a way that the hearts of God&apos;s people would be stirred to love Him and His people more.
           </p>
 
           <div className="hero__cta-row">
@@ -63,7 +63,7 @@ export default function Home() {
         <div className="hero__meta">
           <span>N 52.4093° · W 1.5115° · Coventry, UK</span>
           <blockquote className="verse">
-            &ldquo;"A new commandment I give to you, that you love one another: just as I have loved you, you also are to love one another."&rdquo;
+            &ldquo;A new commandment I give to you, that you love one another: just as I have loved you, you also are to love one another.&rdquo;
             <cite>John 13:34 ESV</cite>
           </blockquote>
         </div>
@@ -77,10 +77,10 @@ export default function Home() {
             Tech that helps us <em>love </em> like <em>Christ.</em>
           </h2>
           <p className="section__sub">
-            In Jesus' own words, we are to be 'light of the world' and 'salt of the earth'. But do the latest technologies lead us in that direction? Sadly, this is often not the case. While God is sovereign and can still bring about His good plans through secular platforms, many of these at their core are designed to stir us up to consume more, yearn for that which we don't have, and resent those who do.
+            In Jesus&apos; own words, we are to be &lsquo;light of the world&rsquo; and &lsquo;salt of the earth&rsquo;. But do the latest technologies lead us in that direction? Sadly, this is often not the case. While God is sovereign and can still bring about His good plans through secular platforms, many of these at their core are designed to stir us up to consume more, yearn for that which we don&apos;t have, and resent those who do.
           </p>
           <p className="section__sub">
-            That is why Agape Labs wants to pursue a more excellent path. Instead of ...Agape has at its core aim the love of God and neighbour. Agape's own name comes from Jesus' words in in John 13:34...
+            That is why Agape Labs wants to pursue a more excellent path. Instead of ...Agape has at its core aim the love of God and neighbour. Agape&apos;s own name comes from Jesus&apos; words in in John 13:34...
            
           </p>
         </div>
