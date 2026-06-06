@@ -211,8 +211,8 @@ body::before {
   z-index: -1;
   pointer-events: none;
   background:
-    radial-gradient(ellipse at center, transparent 0%, transparent 14%, rgba(255, 255, 255, 0.68) 42%, var(--paper) 68%),
-    linear-gradient(to bottom, transparent 62%, var(--paper) 100%);
+    radial-gradient(ellipse at center, transparent 0%, transparent 22%, rgba(255, 255, 255, 0.55) 52%, var(--paper) 78%),
+    linear-gradient(to bottom, transparent 68%, var(--paper) 100%);
 }
 
 .hero__dove {
