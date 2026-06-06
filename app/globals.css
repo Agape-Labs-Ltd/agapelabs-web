@@ -211,8 +211,8 @@ body::before {
   z-index: -1;
   pointer-events: none;
   background:
-    radial-gradient(ellipse at center, transparent 0%, transparent 45%, rgba(255, 255, 255, 0.35) 88%, var(--paper) 100%),
-    linear-gradient(to bottom, transparent 78%, var(--paper) 100%);
+    radial-gradient(ellipse at center, transparent 0%, transparent 22%, rgba(255, 255, 255, 0.55) 52%, var(--paper) 78%),
+    linear-gradient(to bottom, transparent 68%, var(--paper) 100%);
 }
 
 .hero__dove {
@@ -810,7 +810,7 @@ section { position: relative; }
   z-index: -1;
 }
 .about__quote-block {
-  max-width: 680px;
+  max-width: 860px;
   margin: 72px auto 44px;
   position: relative;
 }
@@ -840,27 +840,42 @@ section { position: relative; }
   -webkit-backdrop-filter: blur(16px) saturate(1.2);
   border: 1px solid var(--hairline);
   border-radius: var(--rad);
-  padding: 52px 52px 60px;
-  text-align: center;
+  padding: 56px 60px 68px;
+  text-align: left;
   width: 100%;
   box-sizing: border-box;
+  position: relative;
+}
+.about__blockquote::before {
+  content: '\201C';
+  font-family: var(--serif);
+  font-size: 140px;
+  line-height: 0.75;
+  color: var(--ink);
+  opacity: 0.06;
+  position: absolute;
+  top: 36px;
+  left: 48px;
+  pointer-events: none;
+  user-select: none;
 }
 .about__blockquote p {
   font-family: var(--serif);
   font-style: italic;
-  font-size: clamp(19px, 2vw, 26px);
-  line-height: 1.6;
+  font-size: clamp(17px, 1.6vw, 22px);
+  line-height: 1.78;
   color: var(--ink-soft);
-  margin-bottom: 28px;
+  margin-bottom: 22px;
   text-wrap: pretty;
 }
 .about__blockquote footer {
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: flex-start;
   gap: 5px;
   border-top: 1px solid var(--hairline);
   padding-top: 22px;
+  padding-left: 2px;
 }
 .about__blockquote footer strong {
   font-family: var(--sans);
@@ -898,11 +913,11 @@ section { position: relative; }
 .about__full-text p {
   font-family: var(--serif);
   font-style: italic;
-  font-size: clamp(19px, 2vw, 26px);
-  line-height: 1.6;
+  font-size: clamp(17px, 1.6vw, 22px);
+  line-height: 1.78;
   color: var(--ink-soft);
   margin-top: 0;
-  margin-bottom: 28px;
+  margin-bottom: 22px;
   text-wrap: pretty;
 }
 @keyframes quoteExpand {
@@ -911,7 +926,8 @@ section { position: relative; }
 }
 
 @media (max-width: 680px) {
-  .about__blockquote { padding: 48px 28px 56px; }
+  .about__blockquote { padding: 48px 28px 60px; }
+  .about__blockquote::before { font-size: 100px; top: 24px; left: 22px; }
 }
 
 /* ── BELIEFS ─────────────────────────────────────────────────── */
