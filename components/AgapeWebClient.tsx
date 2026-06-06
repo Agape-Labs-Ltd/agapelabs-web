@@ -55,7 +55,7 @@ export default function AgapeWebClient() {
           }
           float fbm(vec2 p) {
             float v = 0.0; float a = 0.5;
-            for (int i = 0; i < 3; i++) { v += a * noise(p); p *= 2.1; a *= 0.5; }
+            for (int i = 0; i < 5; i++) { v += a * noise(p); p *= 2.07; a *= 0.5; }
             return v;
           }
 
@@ -70,12 +70,20 @@ export default function AgapeWebClient() {
           void main() {
             vec2 uv = gl_FragCoord.xy / u_res.xy;
             float aspect = u_res.x / u_res.y;
-            float t = u_time * 0.012;
+            float t = u_time * 0.038;
 
-            // Light organic warp — keeps blobs from being perfect circles
-            // without letting a single colour dominate
-            vec2 warp = (vec2(fbm(uv * 1.4 + t), fbm(uv * 1.4 + t + 3.7)) - 0.5) * 0.055;
-            vec2 w = uv + warp + u_mouse * 0.012;
+            vec2 p = uv;
+            p.x *= aspect;
+
+            // Double-layer domain warp restores the smoky flowing movement.
+            // The warp offsets the UV used in distance checks without
+            // changing which colour owns which screen region.
+            vec2 q = vec2(fbm(p * 1.2 + vec2(t, -t * 0.7)),
+                          fbm(p * 1.2 + vec2(-t * 0.6, t * 0.9) + 4.3));
+            vec2 r = vec2(fbm(p * 1.4 + 1.5 * q + vec2(1.7 + t * 0.3, 9.2)),
+                          fbm(p * 1.4 + 1.5 * q + vec2(8.3, 2.8 - t * 0.2)));
+
+            vec2 w = uv + (r - 0.5) * 0.18 + u_mouse * 0.012;
 
             // Each colour is anchored to a different edge / corner and drifts slowly.
             // Using position-based radial falloffs guarantees all colours stay visible.

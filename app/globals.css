@@ -381,7 +381,7 @@ body::before {
 
 .hero__meta {
   position: absolute;
-  bottom: 36px;
+  bottom: 62px;
   left: var(--gutter);
   right: var(--gutter);
   display: flex;
