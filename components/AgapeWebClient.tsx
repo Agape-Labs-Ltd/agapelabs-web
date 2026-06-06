@@ -54,68 +54,62 @@ export default function AgapeWebClient() {
             return mix(a, b, u.x) + (c - a) * u.y * (1.0 - u.x) + (d - b) * u.x * u.y;
           }
           float fbm(vec2 p) {
-            float v = 0.0; float a = 0.5;
-            for (int i = 0; i < 5; i++) { v += a * noise(p); p *= 2.07; a *= 0.5; }
+            float v = 0.0;
+            float a = 0.5;
+            for (int i = 0; i < 5; i++) {
+              v += a * noise(p);
+              p *= 2.07;
+              a *= 0.5;
+            }
             return v;
           }
 
-          vec3 paper = vec3(1.0);
-          vec3 warm  = vec3(0.973, 0.710, 0.200);
-          vec3 blush = vec3(0.949, 0.518, 0.557);
-          vec3 pink  = vec3(0.945, 0.471, 0.643);
-          vec3 mauve = vec3(0.812, 0.510, 0.710);
-          vec3 slate = vec3(0.565, 0.690, 0.761);
-          vec3 teal  = vec3(0.384, 0.667, 0.729);
+          vec3 paper    = vec3(1.000, 1.000, 1.000);
+          vec3 warm     = vec3(0.973, 0.710, 0.200);
+          vec3 blush    = vec3(0.949, 0.518, 0.557);
+          vec3 pink     = vec3(0.945, 0.471, 0.643);
+          vec3 mauve    = vec3(0.812, 0.510, 0.710);
+          vec3 slate    = vec3(0.565, 0.690, 0.761);
+          vec3 teal     = vec3(0.384, 0.667, 0.729);
 
           void main() {
             vec2 uv = gl_FragCoord.xy / u_res.xy;
             float aspect = u_res.x / u_res.y;
-            float t = u_time * 0.038;
-
             vec2 p = uv;
             p.x *= aspect;
 
-            // Double-layer domain warp restores the smoky flowing movement.
-            // The warp offsets the UV used in distance checks without
-            // changing which colour owns which screen region.
+            float t = u_time * 0.05;
+
             vec2 q = vec2(fbm(p * 1.2 + vec2(t, -t * 0.7)),
                           fbm(p * 1.2 + vec2(-t * 0.6, t * 0.9) + 4.3));
-            vec2 r = vec2(fbm(p * 1.4 + 1.5 * q + vec2(1.7 + t * 0.3, 9.2)),
-                          fbm(p * 1.4 + 1.5 * q + vec2(8.3, 2.8 - t * 0.2)));
 
-            vec2 w = uv + (r - 0.5) * 0.18 + u_mouse * 0.012;
+            vec2 r = vec2(fbm(p * 1.5 + 2.0 * q + vec2(1.7 + t * 0.3, 9.2)),
+                          fbm(p * 1.5 + 2.0 * q + vec2(8.3, 2.8 - t * 0.2)));
 
-            // Each colour is anchored to a different edge / corner and drifts slowly.
-            // Using position-based radial falloffs guarantees all colours stay visible.
-            vec2 c1 = vec2(0.04,  0.42 + 0.06 * sin(t * 0.71));   // warm  — left
-            vec2 c2 = vec2(0.90,  0.10 + 0.05 * cos(t * 0.83));   // blush — top-right
-            vec2 c3 = vec2(0.94,  0.65 + 0.06 * sin(t * 0.61));   // pink  — right-lower
-            vec2 c4 = vec2(0.62 + 0.05 * sin(t * 0.53), 0.96);    // mauve — bottom-right
-            vec2 c5 = vec2(0.24 + 0.05 * cos(t * 0.67), 0.96);    // slate — bottom-left
-            vec2 c6 = vec2(0.54 + 0.04 * sin(t * 0.79), 0.01);    // teal  — top-centre
+            float n = fbm(p * 1.8 + 3.0 * r + u_mouse * 0.15);
 
-            float rad = 0.62;
-            float m1 = max(0.0, 1.0 - length((w - c1) * vec2(aspect, 1.0)) / rad);
-            float m2 = max(0.0, 1.0 - length((w - c2) * vec2(aspect, 1.0)) / rad);
-            float m3 = max(0.0, 1.0 - length((w - c3) * vec2(aspect, 1.0)) / rad);
-            float m4 = max(0.0, 1.0 - length((w - c4) * vec2(aspect, 1.0)) / rad);
-            float m5 = max(0.0, 1.0 - length((w - c5) * vec2(aspect, 1.0)) / rad);
-            float m6 = max(0.0, 1.0 - length((w - c6) * vec2(aspect, 1.0)) / rad);
-
-            // Squared falloff → softer, more diffuse edges
-            m1 *= m1; m2 *= m2; m3 *= m3;
-            m4 *= m4; m5 *= m5; m6 *= m6;
+            float m1 = smoothstep(0.30, 0.85, n);
+            float m2 = smoothstep(0.34, 0.95, fbm(p * 1.1 + vec2(-t, t * 0.4) + 7.7));
+            float m3 = smoothstep(0.38, 0.85, fbm(p * 0.9 + vec2(t * 0.5, -t * 0.6) + 2.2));
+            float m4 = smoothstep(0.45, 0.95, length(q));
+            float m5 = smoothstep(0.40, 0.90, fbm(p * 1.2 + vec2(t * 0.7, t * 0.3) + 11.1));
+            float m6 = smoothstep(0.40, 0.88, fbm(p * 1.4 + vec2(-t * 0.4, t * 0.8) + 3.3));
 
             vec3 col = paper;
-            col = mix(col, warm,  m1 * 0.58);
-            col = mix(col, blush, m2 * 0.58);
-            col = mix(col, pink,  m3 * 0.58);
-            col = mix(col, mauve, m4 * 0.58);
-            col = mix(col, slate, m5 * 0.62);
-            col = mix(col, teal,  m6 * 0.62);
+            col = mix(col, warm,   m1 * 0.65);
+            col = mix(col, blush,  m2 * 0.65);
+            col = mix(col, pink,   m3 * 0.65);
+            col = mix(col, mauve,  m4 * 0.65);
+            col = mix(col, slate,  m5 * 0.80);
+            col = mix(col, teal,   m6 * 0.80);
 
-            float g = (hash(gl_FragCoord.xy + u_time) - 0.5) * 0.010;
-            col = clamp(col + g, 0.0, 1.0);
+            vec2 center = uv - 0.5;
+            float d = length(vec2(center.x, center.y * 0.85));
+            float vign = smoothstep(0.65, 0.18, d);
+            col = mix(paper, col, vign * 0.95 + 0.05);
+
+            float g = (hash(gl_FragCoord.xy + u_time) - 0.5) * 0.012;
+            col += g;
 
             gl_FragColor = vec4(col, 1.0);
           }
