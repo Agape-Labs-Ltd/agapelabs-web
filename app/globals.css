@@ -417,8 +417,8 @@ body::before {
 }
 
 @media (max-width: 780px) {
-  .hero__meta { flex-direction: column; gap: 16px; align-items: start; }
-  .hero__meta .verse { text-align: left; }
+  .hero__meta { flex-direction: column; gap: 16px; align-items: start; bottom: 24px; }
+  .hero__meta .verse { display: none; }
   .hero__dove { width: min(880px, 122vw); }
   .hero__inner { padding: 120px 0 80px; }
   .hero__title { font-size: clamp(38px, 13vw, 68px); margin-top: 20px; }
