@@ -27,6 +27,20 @@ export default function AgapeWebClient() {
           'radial-gradient(ellipse at 50% 100%, #ffe2c4 0%, transparent 55%),' +
           'linear-gradient(180deg, #ffffff, #ffffff)';
       } else {
+        // ── Curated timeline ──────────────────────────────────────
+        // START_OFFSET: u_time seconds; every visitor loads at this hand-picked state.
+        // LOOP: ping-pong window in u_time seconds; null = drift forever.
+        // Curation notes (contact sheet, 45s steps 0–1800 + 15s fine sweep 660–900):
+        //   favourites: 720 (chosen anchor), 810, 1215, 90, 1485
+        //   offenders (pink blob / blotchy): 0, 45, 135, 360, 675–690, 900, 1395, 1575
+        //   good stretch: ~710–880; edges 690 and 885+ degrade.
+        const START_OFFSET = 720;
+        const LOOP = { t0: 715, t1: 875 } as { t0: number; t1: number } | null;
+
+        const qp = new URLSearchParams(window.location.search);
+        const qT = parseFloat(qp.get('shaderT') ?? '');
+        const offset = Number.isFinite(qT) ? qT : START_OFFSET;
+
         const vert = `
           attribute vec2 a_pos;
           void main() { gl_Position = vec4(a_pos, 0.0, 1.0); }
@@ -170,12 +184,52 @@ export default function AgapeWebClient() {
         window.addEventListener('pointermove', onPointerMove);
         cleanups.push(() => window.removeEventListener('pointermove', onPointerMove));
 
-        const start = performance.now();
+        let elapsed = 0;
+        let last = performance.now();
+        let speed = 1;
+        let paused = false;
+
+        const shaderTime = () => {
+          const now = performance.now();
+          if (!paused) elapsed += ((now - last) / 1000) * speed;
+          last = now;
+          let u = offset + elapsed;
+          if (LOOP && !qp.has('shaderT')) {
+            // Triangle-wave ping-pong keeps u inside the curated window, seamlessly.
+            const span = LOOP.t1 - LOOP.t0;
+            const m = (((u - LOOP.t0) % (2 * span)) + 2 * span) % (2 * span);
+            u = LOOP.t0 + (m <= span ? m : 2 * span - m);
+          }
+          return u;
+        };
+
+        if (process.env.NODE_ENV === 'development') {
+          const onKey = (e: KeyboardEvent) => {
+            if (e.metaKey || e.ctrlKey || e.altKey) return;
+            const target = e.target as HTMLElement | null;
+            if (target && /^(input|textarea|select)$/i.test(target.tagName)) return;
+            switch (e.key) {
+              case 'j': elapsed -= 10; break;
+              case 'k': elapsed += 10; break;
+              case 'J': elapsed -= 60; break;
+              case 'K': elapsed += 60; break;
+              case 'f': speed = speed === 1 ? 15 : 1; break;
+              case 'p': paused = !paused; break;
+              case 'g': {
+                const u = offset + elapsed;
+                console.log(`u_time=${u.toFixed(1)} → ?shaderT=${Math.round(u)}`);
+                break;
+              }
+            }
+          };
+          window.addEventListener('keydown', onKey);
+          cleanups.push(() => window.removeEventListener('keydown', onKey));
+        }
+
         const render = () => {
-          const t = (performance.now() - start) / 1000;
           mouse[0] += (targetMouse[0] - mouse[0]) * 0.04;
           mouse[1] += (targetMouse[1] - mouse[1]) * 0.04;
-          gl.uniform1f(uTime, t);
+          gl.uniform1f(uTime, shaderTime());
           gl.uniform2f(uMouse, mouse[0], mouse[1]);
           gl.drawArrays(gl.TRIANGLES, 0, 6);
           rafId = requestAnimationFrame(render);
