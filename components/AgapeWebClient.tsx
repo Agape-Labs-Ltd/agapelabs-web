@@ -253,6 +253,24 @@ export default function AgapeWebClient() {
     document.querySelectorAll('.reveal-up').forEach((el) => io.observe(el));
     cleanups.push(() => io.disconnect());
 
+    // ── Word-flip width measurement (love ⇄ ἀγαπάω) ───────────────
+    const flips = document.querySelectorAll<HTMLElement>('.word-flip');
+    if (flips.length) {
+      const measureFlips = () => {
+        flips.forEach((el) => {
+          const en = el.querySelector<HTMLElement>('.word-flip__en');
+          const gr = el.querySelector<HTMLElement>('.word-flip__gr');
+          if (!en || !gr) return;
+          el.style.setProperty('--w-en', `${en.getBoundingClientRect().width}px`);
+          el.style.setProperty('--w-gr', `${gr.getBoundingClientRect().width}px`);
+        });
+      };
+      measureFlips();
+      document.fonts?.ready.then(measureFlips);
+      window.addEventListener('resize', measureFlips);
+      cleanups.push(() => window.removeEventListener('resize', measureFlips));
+    }
+
     // ── Smooth anchor scroll ──────────────────────────────────────
     const anchors = document.querySelectorAll('a[href^="#"]');
     const scrollHandlers = new Map<Element, (e: Event) => void>();

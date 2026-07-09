@@ -77,11 +77,29 @@ export default function Home() {
             Tech that helps us <em>love </em> like <em>Christ.</em>
           </h2>
           <p className="section__sub">
-            In Jesus&apos; own words, we are to be &lsquo;light of the world&rsquo; and &lsquo;salt of the earth&rsquo;. But do the latest technologies lead us in that direction? Sadly, this is often not the case. While God is sovereign and can still bring about His good plans through secular platforms, many of these at their core are designed to stir us up to consume more, yearn for that which we don&apos;t have, and resent those who do.
+            In Jesus&apos; own words, we are to be &lsquo;light of the world&rsquo; and &lsquo;salt of the earth&rsquo;. But do the latest technologies lead us in that direction? Sadly, this is often not the case.
           </p>
           <p className="section__sub">
-            That is why Agape Labs wants to encourage and equip believers to pursue a more excellent path. Instead of technology that divides, Agape has at its core aim the love of God and neighbour. Agape&apos;s own name comes from Jesus&apos; words in the Gospel of John: &ldquo;A new commandment I give to you, that you love one another: just as I have loved you, you also are to love one another.&rdquo; (John 13:34 ESV). We have no greater aim as followers of Christ than this. Everything we do, including the way we use technology in our everyday lives should help us do this in some way or another.
-           
+            That is why Agape Labs wants to encourage and equip believers to pursue a more excellent path. Instead of technology that divides, Agape has at its core aim the love of God and neighbour. Agape&apos;s own name comes from Jesus&apos; words in the Gospel of John:
+          </p>
+          <blockquote className="vision__verse">
+            <p>
+              &ldquo;A new commandment I give to you, that you{' '}
+              <span className="word-flip">
+                <span className="word-flip__en">love</span>
+                <span className="word-flip__gr" aria-hidden="true">ἀγαπάω</span>
+              </span>{' '}
+              one another: just as I have loved you, you also are to{' '}
+              <span className="word-flip">
+                <span className="word-flip__en">love</span>
+                <span className="word-flip__gr" aria-hidden="true">ἀγαπάω</span>
+              </span>{' '}
+              one another.&rdquo;
+            </p>
+            <cite>John 13:34 · ESV</cite>
+          </blockquote>
+          <p className="section__sub">
+            We have no greater aim as followers of Christ than this. Everything we do — including the way we use technology in our everyday lives — should help us do this in some way or another.
           </p>
         </div>
 

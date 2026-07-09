@@ -486,6 +486,74 @@ section { position: relative; }
 
 /* ── VISION / MANIFESTO ──────────────────────────────────────── */
 .vision { position: relative; overflow: hidden; }
+
+.vision__verse {
+  margin: 32px 0 0;
+  max-width: 52ch;
+  padding: 26px 30px;
+  background: rgba(10, 10, 10, 0.025);
+  border: 1px solid var(--hairline-soft);
+  border-radius: var(--rad);
+}
+.vision__verse p {
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: clamp(19px, 2vw, 23px);
+  line-height: 1.5;
+  letter-spacing: -0.005em;
+  color: var(--ink);
+  text-wrap: pretty;
+}
+.vision__verse cite {
+  display: block;
+  margin-top: 14px;
+  font-family: var(--sans);
+  font-style: normal;
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+}
+
+/* love ⇄ ἀγαπάω word flip
+   --w-en / --w-gr are measured in AgapeWebClient so the container width
+   breathes between the two word widths instead of reserving the wider slot. */
+.word-flip {
+  display: inline-grid;
+  /* track must shrink with the animated width, not stay at the widest word */
+  grid-template-columns: minmax(0, 1fr);
+  justify-items: center;
+  white-space: nowrap;
+  width: var(--w-en, auto);
+  animation: word-flip-w 8s ease-in-out infinite;
+}
+.word-flip > span { grid-area: 1 / 1; }
+.word-flip__gr {
+  /* Instrument Serif has no Greek glyphs — fall through to serifs with polytonic support */
+  font-family: "EB Garamond", Georgia, "Times New Roman", serif;
+  opacity: 0;
+}
+.word-flip__en { animation: word-flip-en 8s ease-in-out infinite; }
+.word-flip__gr { animation: word-flip-gr 8s ease-in-out infinite; }
+@keyframes word-flip-w {
+  0%, 42%  { width: var(--w-en, auto); }
+  50%, 90% { width: var(--w-gr, auto); }
+  98%, 100% { width: var(--w-en, auto); }
+}
+@keyframes word-flip-en {
+  0%, 42%  { opacity: 1; filter: blur(0); }
+  50%, 90% { opacity: 0; filter: blur(4px); }
+  98%, 100% { opacity: 1; filter: blur(0); }
+}
+@keyframes word-flip-gr {
+  0%, 42%  { opacity: 0; filter: blur(4px); }
+  50%, 90% { opacity: 1; filter: blur(0); }
+  98%, 100% { opacity: 0; filter: blur(4px); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .word-flip, .word-flip__en, .word-flip__gr { animation: none; }
+}
 .vision::before {
   content: "";
   position: absolute;
